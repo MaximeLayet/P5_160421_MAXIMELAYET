@@ -1,0 +1,19 @@
+{
+  "name": "p5_160421_maximelayet",
+  "version": "1.0.0",
+  "description": "P5 OPCR",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximeLayet/P5_160421_MAXIMELAYET.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaximeLayet/P5_160421_MAXIMELAYET/issues"
+  },
+  "homepage": "https://github.com/MaximeLayet/P5_160421_MAXIMELAYET#readme"
+}
