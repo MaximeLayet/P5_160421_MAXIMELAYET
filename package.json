@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/MaximeLayet/P5_160421_MAXIMELAYET/issues"
   },
-  "homepage": "https://github.com/MaximeLayet/P5_160421_MAXIMELAYET#readme"
+  "homepage": "https://github.com/MaximeLayet/P5_160421_MAXIMELAYET#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0"
+  }
 }

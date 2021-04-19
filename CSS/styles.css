@@ -1,0 +1,19 @@
+body {
+     font-family: helvetica, sans-serif;
+}
+
+header {
+    background-color: #f3e9f1;
+}
+
+footer {
+    background-color: #965fea;
+}
+
+.mail {
+    color:#d28040;
+}
+
+ul {
+    list-style: none;
+}
