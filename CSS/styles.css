@@ -7,13 +7,49 @@ header {
 }
 
 footer {
-    background-color: #965fea;
+    background: linear-gradient(to left, #d28040,#965fea);
 }
 
 .mail {
-    color:#d28040;
+ color:#000
 }
 
 ul {
     list-style: none;
+}
+
+h1 {
+    font-size:1.5rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:1rem;
+}
+
+img.teddy_bear {
+    height:15rem;
+}
+
+a.retour_accueil{
+    font-size: 25px;
+    background: linear-gradient(to left, #965fea, #d28040);
+    color: #000;
+}
+
+button{
+    background: linear-gradient(to left, #965fea, #d28040);
+}
+
+button:hover{
+    background: #965fea;
+}
+
+p.validate{
+    text-transform: uppercase;
+    font-weight: bold;
 }
