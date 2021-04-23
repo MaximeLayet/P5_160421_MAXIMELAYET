@@ -3,15 +3,15 @@
 
 //Recupération API des produits
 
-var request = new XMLHttpRequest ();
-request.open ("GET", http://localhost:3000/api/teddies);
-request.send();
+fetch("http://localhost:3000/api/teddies")
+        .then(teddies => teddies.json())
+        .then(json => console.log(json));
 
-var request = new XMLHttpRequest ();
-request.open ("GET", http://localhost:3000/api/cameras);
-request.send();
+fetch("http://localhost:3000/api/cameras")
+        .then(cameras => cameras.json())
+        .then(json => console.log(json));
 
-var request = new XMLHttpRequest ();
-request.open ("GET", http://localhost:3000/api/fourniture);
-request.send();
-
+ fetch("http://localhost:3000/api/fourniture")
+        .then(cameras => cameras.json())
+        .then(json => console.log(json));
+ 
