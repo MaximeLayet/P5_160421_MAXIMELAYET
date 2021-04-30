@@ -22,6 +22,13 @@
         Et voilà ton panier!!
       </h1>
       <!--Ci dessous le panier avec le résumé de la commande, le total et un formulaire pour passer la commande(nom, etc)-->
+      <table class="table">
+        <thead>
+          <tr><th>Article</th><th>Prix</th><th>Quantité</th></tr>
+        </thead>
+        <tbody id="cartSummary"></tbody>
+      </table>
+      <p>Total : <span id="total"></span>€</p>
       <h2 class="text-center">
         Dernière étape pour confirmer ton panier!
       </h2>
@@ -32,10 +39,10 @@
           Prénom: <input class="m-2" type="text" placeholder="Ton prénom" required><br>
           Nom: <input class="m-2" type="text" placeholder="Ton nom" required><br>
           Mail: <input class="m-2" type="email" placeholder="Ton mail" required><br>
-          Numéro de mobile: <input class="m-2" type="number" placeholder="Ton 06 bébé" pattern="[0-9]{10}" required>
+          Numéro de mobile: <input class="m-2" type="number" placeholder="Ton 06" pattern="[0-9]{10}" required>
         </form>
         <div class="col-12 text-center">
-          <button class="btn w-100" href="confirm.html">
+          <button id="confirmCommand" class="btn w-100" href="confirm.html">
             <p class="validate mb-0 ">Valider</p>
           </button>
         </div>
