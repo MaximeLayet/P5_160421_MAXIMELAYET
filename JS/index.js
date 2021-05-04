@@ -1,106 +1,87 @@
-        //////// API ///////
+//////// API ///////
 
-const url ='http://localhost:3000/api/teddies'
+const url = "http://localhost:3000/api/teddies";
 
 let product;
-const output = document.getElementById('output');
+const output = document.getElementById("output");
 
-
-        //Noms//
-
-fetch(url)
-        .then(res => res.json())
-        .then(teddies => {
-                teddies.forEach(teddy => {
-                        const h2 = document.createElement('h2');
-                        h2.textContent = teddy.name;
-                        console.log(h2);
-                        output.appendChild(h2);
-                        product = teddy;
-                })
-        })
-
-        // Prix //
-
-const teddyPrice = document.getElementById('teddyPrice');
-fetch(url)
-        .then(res => res.json())
-        .then(teddies => {
-                teddies.forEach(teddy => {
-                        const h2 = document.createElement('h2');
-                        h2.textContent = teddy.price;
-                        console.log(h2);
-                        teddyPrice.appendChild(h2);
-                        product = teddy;
-                })
-        })
-
-        // Description //
+//Noms//
 
 fetch(url)
-        .then(res => res.json())
-        .then(teddies => {
-                teddies.forEach(teddy => {
-                        const p = document.createElement('p');
-                        p.textContent = teddy.description;
-                        console.log(p);
-                        teddyPrice.appendChild(p);
-                        product = teddy;
-                })
-        })
-        // Photo Teddies // 
+	.then(res => res.json())
+	.then(teddies => {
+		teddies.forEach(teddy => {
+			const h2 = document.createElement("h2");
+			h2.textContent = teddy.name;
+			const p = document.createElement("p");
+			p.textContent = teddy.price / 100 + " €";
+			const img = document.createElement("img");
+			img.src = teddy.imageUrl;
+			const a = document.createElement("a");
+			a.textContent = teddy.description;
+			const button = document.createElement("button");
+			button.textContent = "Je te choisis";
 
-const img = document.getElementById("bear_pic");
+			output.appendChild(h2);
+			output.appendChild(img);
+			output.appendChild(a);
+			output.appendChild(p);
+			output.appendChild(button);
+		});
+	});
 
-fetch(url)
-        .then(res=> res.json())
-        .then(data => {
-                img.innerHTML = data[0].url;
-                img.src = data[0].imageUrl;
-        })
+//Styles//
 
-fetch(url)
-        .then(res=> res.json())
-        .then(data => {
-                img.innerHTML = data[1].url;
-                img.src = data[1].imageUrl;
-        })
-
-fetch(url)
-        .then(res=> res.json())
-        .then(data => {
-                img.innerHTML = data[2].url;
-                img.src = data[2].imageUrl;
-        })
-
-fetch(url)
-        .then(res=> res.json())
-        .then(data => {
-                img.innerHTML = data[3].url;
-                img.src = data[3].imageUrl;
-        })
-
-fetch(url)
-        .then(res=> res.json())
-        .then(data => {
-                img.innerHTML = data[4].url;
-                img.src = data[4].imageUrl;
-        })
-
-// Fonction pour diviser le prix et l'afficher en Euros // 
-
-let price = 5900;
-
-function realPrice() {
-    price /= 100;
-    console.log(price + ' €');
-}
-
-realPrice();
+output.style.fontFamily = "Helvetica";
+output.style.padding = "0.5rem";
+output.style.marginBottom = "1rem";
 
 // .......... //
 
-
-
-
-
+// const teddies = [
+// 	{
+// 		colors: ["Tan", "Chocolate", "Black", "White"],
+// 		_id: "5be9c8541c9d440000665243",
+// 		name: "Norbert",
+// 		price: 2900,
+// 		imageUrl: "http://localhost:3000/images/teddy_1.jpg",
+// 		description:
+// 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+// 	},
+// 	{
+// 		colors: ["Pale brown", "Dark brown", "White"],
+// 		_id: "5beaa8bf1c9d440000a57d94",
+// 		name: "Arnold",
+// 		price: 3900,
+// 		imageUrl: "http://localhost:3000/images/teddy_2.jpg",
+// 		description:
+// 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+// 	},
+// 	{
+// 		colors: ["Brown"],
+// 		_id: "5beaaa8f1c9d440000a57d95",
+// 		name: "Lenny and Carl",
+// 		price: 5900,
+// 		description:
+// 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+// 		imageUrl: "http://localhost:3000/images/teddy_3.jpg"
+// 	},
+// 	{
+// 		colors: ["Brown", "Blue", "Pink"],
+// 		_id: "5beaabe91c9d440000a57d96",
+// 		name: "Gustav",
+// 		price: 4500,
+// 		imageUrl: "http://localhost:3000/images/teddy_4.jpg",
+// 		description:
+// 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+// 	},
+// 	{
+// 		colors: ["Beige", "Tan", "Chocolate"],
+// 		_id: "5beaacd41c9d440000a57d97",
+// 		name: "Garfunkel",
+// 		price: 5500,
+// 		description:
+// 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+// 		imageUrl: "http://localhost:3000/images/teddy_5.jpg"
+// 	}
+// ];
