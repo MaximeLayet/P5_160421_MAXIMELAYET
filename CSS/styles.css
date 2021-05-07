@@ -6,10 +6,12 @@
 body {
 	font-family: helvetica, sans-serif;
 	background-color: #f3e9f1;
+	width: 100%;
 }
 
 header {
 	background-color: #f3e9f1;
+	height: 25%;
 }
 
 footer {
@@ -25,7 +27,7 @@ ul {
 }
 
 h1 {
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	text-transform: uppercase;
 	color: #965fea;
 	font-weight: bolder;
@@ -37,12 +39,17 @@ h2 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 	border-top: double 5px #000;
 	text-transform: uppercase;
 	padding-top: 0.5rem;
 	font-family: "Moanhand";
+}
+
+h3 {
+	font-style: italic;
+	font-size: 1rem;
 }
 
 a.retour_accueil {
@@ -74,12 +81,18 @@ p.validate {
 }
 
 img {
-	width: 150px;
-	height: 150px;
+	width: 50%;
+	height: 75%;
 	object-fit: cover;
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;
-	padding-bottom: 0.5rem;
+	padding-bottom: 1rem;
+}
+
+img.orinoco {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 a.mail {
