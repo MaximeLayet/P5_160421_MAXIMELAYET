@@ -1,20 +1,9 @@
-//Récupérer la photo avec _id de la page précédente//
-
-// const img = document.createElement("img");
-// let search = "_id";
-// img.src = window.location.search;
-// console.log(123);
-
-//Créer les éléments pour y mettre les données//
-// const personalisation = document.getElementById("personalisation");
-// personalisation.appendChild("img");
-
 // Fonction pour afficher le nombre de choix qu'il faut car pas le même nombre de choix par produit//
 
-function chooseColor(color) {
+function chooseColor(colors) {
 	let choices = "";
-	for (let i = 0; i < color.length; i++) {
-		choices += `<option value= "${i}">${color[i]}</option>`;
+	for (let i = 0; i < colors.length; i++) {
+		choices += `<option value= "${i}">${colors[i]}</option>`;
 	}
 	console.log();
 	return choices;
@@ -34,10 +23,26 @@ const fetchTeddy = async id => {
 const showTeddy = async id => {
 	let teddy = await fetchTeddy(id);
 	console.log(teddy);
-	const img = document.createElement("img");
-	img.src = teddy.imageUrl;
 
-	personalisation.appendChild(img);
+	//Mise en page de la personnalisation du produit plus appel de la fonction pour le choix des couleurs//
+
+	personalisation.innerHTML = `<div class="card-body">
+		<h2 class="card-text">${teddy.name}</h2>
+		<img class="card-img-top" src="${teddy.imageUrl}" />
+		<h3 class="card-text">${teddy.description}</h3>
+		<p class="price_product text-center">${teddy.price / 100}€</p>
+	</div>
+	<label for=quantity>Quantité :</label>
+	<input type="number" min="0" class="w-25"></input>
+	<div>
+		<label for="">Choisis ta couleur :</label>
+		<select name="colors">
+			<option value="">Sélectionne ta couleur</option>
+			${this.chooseColor(teddy.colors)}
+		</select>
+	</div>
+		
+	`;
 };
 
 showTeddy(id);

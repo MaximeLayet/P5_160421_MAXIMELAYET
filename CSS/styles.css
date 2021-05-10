@@ -75,6 +75,10 @@ p {
 	border-top: dotted 2px #d28040;
 }
 
+p.price_product {
+	font-size: 2.5rem;
+}
+
 p.validate {
 	text-transform: uppercase;
 	font-weight: bold;

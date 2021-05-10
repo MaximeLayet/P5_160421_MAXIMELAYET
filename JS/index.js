@@ -2,7 +2,6 @@
 
 const url = "http://localhost:3000/api/teddies";
 
-let product;
 const output = document.getElementById("output");
 
 fetch(url)
@@ -20,14 +19,14 @@ fetch(url)
 			const h3 = document.createElement("h3");
 			h3.textContent = teddy.description;
 			const a = document.createElement("a");
-			a.href = `products.html?id=${teddy._id}`;
+			a.href = `product.html?id=${teddy._id}`;
 
 			output.appendChild(h2);
 			output.appendChild(img);
-			output.appendChild(h3);
-			output.appendChild(p);
 			output.appendChild(a);
 			a.appendChild(img);
+			output.appendChild(h3);
+			output.appendChild(p);
 		});
 	})
 
