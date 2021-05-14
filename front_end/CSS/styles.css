@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Moanhand";
-	src: url(../MOANHAND.ttf);
+	src: url(/MOANHAND.ttf);
 }
 
 body {
@@ -29,7 +29,6 @@ ul {
 h1 {
 	font-size: 2.5rem;
 	text-transform: uppercase;
-	color: #965fea;
 	font-weight: bolder;
 	font-family: "Moanhand";
 }
@@ -60,6 +59,7 @@ a.retour_accueil {
 
 button {
 	background: linear-gradient(to left, #965fea, #d28040);
+	border: solid 2px #000;
 	border-radius: 0.5rem;
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
@@ -85,18 +85,31 @@ p.validate {
 }
 
 img {
-	width: 50%;
-	height: 75%;
+	width: 25%;
+	height: 50%;
 	object-fit: cover;
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;
 	padding-bottom: 1rem;
+	border-radius: 0 0 2.5rem 0;
 }
 
 img.orinoco {
-	width: 100%;
-	height: 100%;
+	width: 50%;
+	height: 50%;
 	object-fit: cover;
+	padding: 0;
+	text-align: center;
+	margin: auto;
+	display: flex;
+}
+
+img.only_bear {
+	border: solid 5px #000;
+	padding: 0;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-bottom: 1rem;
 }
 
 a.mail {

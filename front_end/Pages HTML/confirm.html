@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr-fr">
 	<head>
-		<title>Urinoco</title>
+		<title>Orinoco</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,24 +14,28 @@
 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 			crossorigin="anonymous"
 		/>
-		<link rel="stylesheet" type="text/css" href="/CSS/styles.css" />
+		<link rel="stylesheet" type="text/css" href="/front_end/CSS/styles.css" />
 	</head>
 	<body>
 		<header>
 			<img
-				class="product col-12"
+				class="orinoco col-12"
 				src="/back_end/images/logo-oronico.png"
 				alt="Logo Oronico"
 			/>
+			<a class="retour_accueil d-flex justify-content-center" href="index.html">Accueil</a>
 		</header>
+
 		<main>
-			<h1 class="product text-center text-body">Personnalise ton Ours!</h1>
-			<div class="cart container-fluid col-6" id="personalisation"></div>
-			</div>
-			<div class="back text-center">
-				<a href="index.html">
-					<p class="back_index">Retour à la page d'accueil</p>
-				</a>
+			<h1>C'est tout bon!!</h1>
+
+			<!--Div ci-dessous pour le recap en JS avec remerciement, total et reference commande-->
+			<div class="summary">
+				<p>
+					Merci "Maxime" pour ton achat de "100€", la référence de ta commande est le
+					"C000"
+				</p>
+				<p>A très vite sur Oronico!</p>
 			</div>
 		</main>
 
@@ -57,6 +61,6 @@
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"
 		></script>
-		<script src="/JS/product.js"></script>
+		<script src="script.js"></script>
 	</body>
 </html>

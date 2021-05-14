@@ -19,7 +19,7 @@ fetch(url)
 			const h3 = document.createElement("h3");
 			h3.textContent = teddy.description;
 			const a = document.createElement("a");
-			a.href = `/Page HTML/product.html?id=${teddy._id}`;
+			a.href = `/front_end/Pages HTML/product.html?id=${teddy._id}`;
 
 			output.appendChild(h2);
 			output.appendChild(img);
@@ -27,11 +27,9 @@ fetch(url)
 			a.appendChild(img);
 			output.appendChild(h3);
 			output.appendChild(p);
+			img.classList.add("only_bear");
 		});
-	})
-
-	//Afficher un message d'erreur
-	.catch(err => "Oups!");
+	});
 
 //Styles//
 
