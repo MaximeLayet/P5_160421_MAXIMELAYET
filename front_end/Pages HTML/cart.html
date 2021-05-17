@@ -34,14 +34,6 @@
 			<h1 class="text-center mt-4">Et voilà ton panier!!</h1>
 			<!--Ci dessous le panier avec le résumé de la commande, le total et un formulaire pour passer la commande(nom, etc)-->
 			<table class="table">
-				<thead>
-					<tr>
-						<th>Article</th>
-						<th>Nom</th>
-						<th>Quantité</th>
-						<th>Prix</th>
-					</tr>
-				</thead>
 				<tbody id="cartSummary"></tbody>
 			</table>
 			<p class="m-2">Total : <span id="total"></span>€</p>
@@ -49,19 +41,19 @@
 			<div class="kart"></div>
 			<div class="form_command ml-2">
 				<form method="GET">
-					<label for="first_name">Prénom:</label>
+					<label id="firstName" for="first_name">Prénom:</label>
 					<input class="m-2" type="text" placeholder="Ton prénom" required />
 					<br />
-					<label for="last_name">Nom:</label>
+					<label id="lastName" for="last_name">Nom:</label>
 					<input class="m-2" type="text" placeholder="Ton nom" required />
 					<br />
-					<label for="email">EMail:</label>
+					<label id="email" for="email">EMail:</label>
 					<input class="m-2" type="email" placeholder="Ton mail" required />
 					<br />
-					<label for="city">Ville:</label>
+					<label id="city" for="city">Ville:</label>
 					<input class="m-2" type="text" placeholder="Ta ville" required />
 					<br />
-					<label for="address">Adresse:</label>
+					<label id="address" for="address">Adresse:</label>
 					<input class="m-2" type="text" placeholder="Ton adresse" required />
 
 					<div class="col-12 text-center">

@@ -15,13 +15,6 @@ let product = new URL(window.location.href);
 let id = product.searchParams.get("id");
 
 // //appel de l'API
-// const fetchTeddy = async id => {
-// 	return await fetch(`http://localhost:3000/api/teddies/${id}`).then(res => res.json());
-// };
-
-// // affichage d'un seul produit par page
-// const showTeddy = async id => {
-// 	let teddy = await fetchTeddy(id);
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
 	.then(res => res.json())
@@ -48,7 +41,7 @@ function showTeddy(teddy) {
 		</select>
 	</div>
 	<div class="two_buttons">
-	<button id="sendToCart">Ajouter au panier</button>
+	<button id="sendToCart" onclick="getQuantities()" >Ajouter au panier</button>
 	<a href="/front_end/Pages HTML/cart.html">
 	<button class="see_my_cart">Voir mon panier</button>
 	</a>	
@@ -56,38 +49,58 @@ function showTeddy(teddy) {
 	`;
 
 	//Créer un objet pour l'envoyer dans le local storage
-	let quantit = document.querySelector("#quantityCount");
-	console.log(quantit);
-
-	let sheet = {
-		Id: teddy._id,
-		name: teddy.name,
-		price: teddy.price / 100,
-		picture: teddy.imageUrl,
-		quantité: quantit
-	};
-
-	console.log(sheet.quantity);
 
 	//Envoyer dans le localStorage
 
 	sendToCart.addEventListener("click", function (e) {
 		//Annuler l'event par défaut qui renvoie à l'index.hmtl
+
 		e.preventDefault();
 
-		// quantit.addEventListener("change", function (e) {
-		// 	quantit = quantit.value;
-		// });
+		//Definir quantities et recupérer la valeur
+
+		let quantities = document.getElementById("quantityCount").value;
+
+		//Créer une fonction à appeler dans le html
+
+		function getQuantities() {
+			quantities;
+			console.log(quantities);
+		}
+
+		//Appeler la fonction
+
+		getQuantities;
+
+		//Définir les données à envoyer dans le localStorage
+
+		let sheet = {
+			Id: teddy._id,
+			name: teddy.name,
+			price: teddy.price / 100,
+			picture: teddy.imageUrl,
+			quantity: quantities
+		};
 
 		//Evoie dans le local storage en ajoutant une ligne au tableau
 
-		const goToData = JSON.parse(localStorage.getItem("fiche")) || [];
-		goToData.push(sheet);
-		localStorage.setItem("fiche", JSON.stringify(goToData));
+		const cartContent = JSON.parse(localStorage.getItem("cartContent")) || [];
+		cartContent.push(sheet);
+		console.log(cartContent);
+		localStorage.setItem("cartContent", JSON.stringify(cartContent));
+
+		console.log();
 
 		//Ajouter une quantité quand produit similaire plutot qu'une nouvelle ligne
+		//Si l'id est identique, additionner les quantités
 
-		//"Si la quantité est null, ajouter une ligne, sinon ajouter une quantité"
+		if (teddy._id === teddy._id) {
+			function addQuantities() {
+				quantity.push(quantities);
+			}
+			addQuantities;
+		}
+
+		console.log(quantities);
 	});
 }
-//Appel de la fonction
