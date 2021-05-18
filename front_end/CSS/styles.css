@@ -141,3 +141,9 @@ p.back_index {
 	padding-top: 1rem;
 	color: #000;
 }
+
+td {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}

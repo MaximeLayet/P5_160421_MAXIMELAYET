@@ -66,6 +66,7 @@ function showTeddy(teddy) {
 		function getQuantities() {
 			quantities;
 			console.log(quantities);
+			for (teddy._id === teddy._id; quantities > 1; quantity.push(quantities));
 		}
 
 		//Appeler la fonction
@@ -94,13 +95,14 @@ function showTeddy(teddy) {
 		//Ajouter une quantité quand produit similaire plutot qu'une nouvelle ligne
 		//Si l'id est identique, additionner les quantités
 
-		if (teddy._id === teddy._id) {
-			function addQuantities() {
-				quantity.push(quantities);
-			}
-			addQuantities;
-		}
+		// if (teddy._id === teddy._id) {
+		// 	function addQuantities() {
+		// 		// quantity.push(quantities);
+		// 		quantities++;
+		// 	}
+		// 	addQuantities;
+		// }
 
-		console.log(quantities);
+		// console.log(quantities);
 	});
 }
