@@ -30,9 +30,3 @@ fetch(url)
 			img.classList.add("only_bear");
 		});
 	});
-
-//Styles//
-
-output.style.fontFamily = "Helvetica";
-output.style.padding = "0.5rem lg-4";
-output.style.marginBottom = "1rem";

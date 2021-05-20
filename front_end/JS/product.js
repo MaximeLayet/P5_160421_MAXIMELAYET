@@ -31,17 +31,20 @@ function showTeddy(teddy) {
 		<h3 class="card-text">${teddy.description}</h3>
 		<p class="price_product text-center" id="price">${teddy.price / 100}€</p>
 	</div>
-	<label for=quantity>Quantité :</label>
-	<input type="number" min="1" class= w-25" id="quantityCount" value = "" ></input>
-	<div>
-		<label for="">Choisis ta couleur :</label>
-		<select name="colors">
-			<option id="color" value="">Sélectionne ta couleur</option>
-			${this.chooseColor(teddy.colors)}
-		</select>
+	<div class="custom">
+		<label for=quantity>Quantité :</label>
+		<input type="number" min="1" class= w-25" id="quantityCount" value = "" ></input>		
+		<label for="color">Choisis ta couleur :</label>
+			<select name="colors">
+				<option id="color" value="">Sélectionne ta couleur</option>
+				${this.chooseColor(teddy.colors)}
+			</select>
 	</div>
-	<div class="two_buttons">
-	<button id="sendToCart" onclick="getQuantities()" >Ajouter au panier</button>
+	<div class="three_buttons">
+	<a href="/front_end/Pages HTML/index.html">
+	<button>Choisis un autre Orinours</button>
+	</a>	
+	<button id="sendToCart" >Ajouter au panier</button>
 	<a href="/front_end/Pages HTML/cart.html">
 	<button class="see_my_cart">Voir mon panier</button>
 	</a>	
@@ -63,16 +66,6 @@ function showTeddy(teddy) {
 
 		//Créer une fonction à appeler dans le html
 
-		function getQuantities() {
-			quantities;
-			console.log(quantities);
-			for (teddy._id === teddy._id; quantities > 1; quantity.push(quantities));
-		}
-
-		//Appeler la fonction
-
-		getQuantities;
-
 		//Définir les données à envoyer dans le localStorage
 
 		let sheet = {
@@ -90,19 +83,7 @@ function showTeddy(teddy) {
 		console.log(cartContent);
 		localStorage.setItem("cartContent", JSON.stringify(cartContent));
 
-		console.log();
-
 		//Ajouter une quantité quand produit similaire plutot qu'une nouvelle ligne
 		//Si l'id est identique, additionner les quantités
-
-		// if (teddy._id === teddy._id) {
-		// 	function addQuantities() {
-		// 		// quantity.push(quantities);
-		// 		quantities++;
-		// 	}
-		// 	addQuantities;
-		// }
-
-		// console.log(quantities);
 	});
 }

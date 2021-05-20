@@ -8,27 +8,23 @@ function myCart() {
 	for (var i = 0; i < cartContent.length; i++) {
 		let cart = document.getElementById("cartSummary");
 
-		cart.innerHTML += `<tr><td><img class="cartPicture" src="${cartContent[i].picture}" alt="Photo du teddy"/></td><td>${cartContent[i].name}<td>
+		cart.innerHTML += `<tr class="mySummary"><td><img class="cartPicture" src="${cartContent[i].picture}" alt="Photo du teddy"/></td><td>${cartContent[i].name}<td>
 		<td>${cartContent[i].quantity}</td>
 		<td>${cartContent[i].price}€<td>
-		<td><a href="#" class="btn btn-danger btn-sm delete">X</a></td></tr>`;
+		<td><btn class="btn btn-danger btn-sm delete " >X</btn></td></tr>`;
 	}
 }
 
 myCart();
 
 //Supprimer une ligne
-// function deleteItem() {
-// 	if (tr.contains("delete")) {
-// 		parentElement.parentElement.remove();
-// 	}
-// }
 
-// console.log(deleteItem());
-
-// document.querySelector("#cartSummary").addEventListener("click", e => {
-// 	cartContent.deleteItem(e.target)
-// });
+let cancel = document.querySelector("btn");
+console.log(cancel.classList);
+cancel.addEventListener("click", () => {
+	cancel.classList.remove("mySummary");
+	console.log(cancel.classList.remove("mySummary"));
+});
 
 //Creer une fonction pour calculer et afficher le total du panier
 function totalCart() {
@@ -83,14 +79,8 @@ document.getElementById("confirmCommand").addEventListener("click", function (e)
 		},
 		body: sendCart
 	})
-		.then(function (response) {
-			console.log(response);
-			return response.json();
-		})
-		.then(function (command) {
-			console.log(command);
-			localStorage.setItem("number", JSON.stringify(command));
-			localStorage.removeItem("cartContent");
-			window.location.href = "/front_end/Pages HTML/confirm.html";
-		});
+		.then(res => res.json())
+		.then(command => localStorage.setItem("number", JSON.stringify(command)));
+	localStorage.removeItem("cartContent");
+	window.location.href = "/front_end/Pages HTML/confirm.html";
 });

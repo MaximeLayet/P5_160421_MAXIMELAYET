@@ -5,4 +5,4 @@ let order = getCommand.orderId;
 console.log(order);
 
 let confirm = document.getElementById("confirmation");
-confirm.innerHTML = "Mon N° de commande<br>" + order;
+confirm.innerHTML = "Ton numéro de commande est le " + order;
