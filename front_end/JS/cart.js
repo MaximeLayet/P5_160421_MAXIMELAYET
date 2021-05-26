@@ -19,13 +19,6 @@ myCart();
 
 //Supprimer une ligne
 
-let cancel = document.querySelector("btn");
-console.log(cancel.classList);
-cancel.addEventListener("click", () => {
-	cancel.classList.remove("mySummary");
-	console.log(cancel.classList.remove("mySummary"));
-});
-
 //Creer une fonction pour calculer et afficher le total du panier
 function totalCart() {
 	let globalPrice = 0;
@@ -44,6 +37,22 @@ totalCart();
 
 document.getElementById("confirmCommand").addEventListener("click", function (e) {
 	console.log(cartContent);
+
+	if (cartContent.lenght > 0) {
+		alert("Ton panier est vide, cela nous attriste");
+	} else {
+		alert("tu as validé ton panier, cela nous rempli de joie!");
+	}
+
+	// if (
+	// 	firstName.value.match(/^([a-zA-Z- àâäéèêëïîôöùûüç]+)$/) &&
+	// 	lastName.value.match(/^([a-zA-Z- àâäéèêëïîôöùûüç]+)$/) &&
+	// 	address.value.match(/^([0-9a-zA-Z- àâäéèêëïîôöùûüç]+)$/) &&
+	// 	email.value.match(
+	// 		/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/,
+	// 	) &&
+	// 	city.value.match(/^([a-zA-Z- àâäéèêëïîôöùûüç]+)$/)
+	// )
 
 	let products = [];
 	console.log(products);

@@ -64,6 +64,12 @@ function showTeddy(teddy) {
 
 		let quantities = document.getElementById("quantityCount").value;
 
+		if (quantities > 1) {
+			alert(`Les ${teddy.name} ont couru vers le panier`);
+		} else {
+			alert(`${teddy.name} a couru vers le panier`);
+		}
+
 		//Créer une fonction à appeler dans le html
 
 		//Définir les données à envoyer dans le localStorage
@@ -71,7 +77,7 @@ function showTeddy(teddy) {
 		let sheet = {
 			Id: teddy._id,
 			name: teddy.name,
-			price: teddy.price / 100,
+			price: (teddy.price / 100) * quantities,
 			picture: teddy.imageUrl,
 			quantity: quantities
 		};

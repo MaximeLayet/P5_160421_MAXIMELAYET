@@ -55,8 +55,8 @@ h1 {
 	text-transform: uppercase;
 	font-weight: bolder;
 	font-family: "Moanhand";
-	margin-top:1rem;
-	padding-top:1rem;
+	margin-top: 1rem;
+	padding-top: 1rem;
 	border-bottom: solid 5px #000;
 }
 
@@ -124,13 +124,13 @@ p.total_note {
 	font-size: 3rem;
 }
 
-p.command_id{
+p.command_id {
 	text-align: center;
 	padding-top: 0.5rem;
 }
 
-p.no_dot{
-	border-top:none;
+p.no_dot {
+	border-top: none;
 }
 
 img {
@@ -202,4 +202,6 @@ td {
 	line-height: 5;
 }
 
-TODO //finir css du panier
+btn {
+	cursor: pointer;
+}
