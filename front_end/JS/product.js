@@ -33,7 +33,7 @@ function showTeddy(teddy) {
 	</div>
 	<div class="custom">
 		<label for=quantity>Quantité :</label>
-		<input type="number" min="1" class= w-25" id="quantityCount" value = "" ></input>		
+		<input type="number" min="1" class= w-25" id="quantityCount" value = "1" ></input>		
 		<label for="color">Choisis ta couleur :</label>
 			<select name="colors">
 				<option id="color" value="">Sélectionne ta couleur</option>
@@ -64,32 +64,67 @@ function showTeddy(teddy) {
 
 		let quantities = document.getElementById("quantityCount").value;
 
+		//Message d'ajout dans le panier d'un ou plusieurs Teddy
+
 		if (quantities > 1) {
-			alert(`Les ${teddy.name} ont couru vers le panier`);
+			alert(`Plusieurs ${teddy.name} ont couru vers le panier`);
 		} else {
 			alert(`${teddy.name} a couru vers le panier`);
 		}
 
-		//Créer une fonction à appeler dans le html
-
 		//Définir les données à envoyer dans le localStorage
 
 		let sheet = {
-			Id: teddy._id,
+			id: teddy._id,
 			name: teddy.name,
 			price: (teddy.price / 100) * quantities,
 			picture: teddy.imageUrl,
-			quantity: quantities
+			quantity: parseFloat(quantities)
 		};
 
 		//Evoie dans le local storage en ajoutant une ligne au tableau
-
 		const cartContent = JSON.parse(localStorage.getItem("cartContent")) || [];
 		cartContent.push(sheet);
-		console.log(cartContent);
 		localStorage.setItem("cartContent", JSON.stringify(cartContent));
 
-		//Ajouter une quantité quand produit similaire plutot qu'une nouvelle ligne
-		//Si l'id est identique, additionner les quantités
+		// cartContent.forEach(newQuantity => {
+		// 	if (cartContent.id === teddy.id) {
+		// 		cartContent.quantity = false;
+		// 		newQuantity.quantity += quantity;
+		// 		localStorage.setItem("cartContent", JSON.stringify(cartContent));
+		// 	} else {
+		// 		cartContent.push(sheet);
+		// 		localStorage.setItem("cartContent", JSON.stringify(cartContent));
+		// 	}
+		// });
+		// console.log(cartContent);
+		// console.log(sheet.quantity);
+
+		// if (cartContent[i].id === sheet.id) {
+		// 	cartContent.shift(sheet.quantity);
+		// 	cartContent.push(sheet.quantity);
+		// 	localStorage.removeItem("cartContent", JSON.stringify(cartContent));
+		// 	localStorage.setItem("cartContent", JSON.stringify(cartContent));
+		// } else {
+		// 	cartContent.push(sheet);
+		// 	localStorage.setItem("cartContent", JSON.stringify(cartContent));
+		// }
+
+		// function addQuantity(cartContent) {
+		// 	for (let i = 0; i < cartContent.length; i++) {
+		// 		if (cartContent[i].id === sheet.id) {
+		// 			return i;
+		// 		}
+		// 	}
+		// 	return false;
+		// }
+
+		// addQuantity(cartContent);
+
+		// for (let i = 0; i < cartContent.length; i++) {
+		// 	let sheetToUpdate = cartContent.indexOf(cartContent[i]);
+		// 	cartContent[sheetToUpdate][sheet.quantity] += sheet.quantity;
+		// 	localStorage.setItem("cartContent", JSON.stringify(cartContent));
+		// }
 	});
 }

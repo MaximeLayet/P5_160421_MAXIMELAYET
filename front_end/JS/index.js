@@ -20,6 +20,7 @@ fetch(url)
 			h3.textContent = teddy.description;
 			const a = document.createElement("a");
 			a.href = `/front_end/Pages HTML/product.html?id=${teddy._id}`;
+			console.log(a.href);
 
 			output.appendChild(h2);
 			output.appendChild(img);
