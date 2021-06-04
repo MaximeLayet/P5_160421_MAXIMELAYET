@@ -2,6 +2,7 @@
 
 //Appeler les produits du localStorage
 let cartContent = JSON.parse(localStorage.getItem("cartContent"));
+console.log(cartContent);
 
 //Creer une fonction pour afficher les informations necessaires
 function myCart() {
@@ -9,10 +10,10 @@ function myCart() {
 		let cart = document.getElementById("cartSummary");
 
 		cart.innerHTML += `<tr class="mySummary"><td><img class="cartPicture" src="${cartContent[i].picture}" alt="Photo du teddy"/></td><td>${cartContent[i].name}<td>
-		<td>${cartContent[i].quantity}</td>
+		<td>x${cartContent[i].quantity}</td>
 		<td>${cartContent[i].price}€<td>
 		<td><btn class="btn btn-danger btn-sm delete">X</btn></td></tr>`;
-
+		console.log(cart);
 		//Supprimer une ligne
 
 		let deleteLine = document.querySelectorAll(".delete");
@@ -40,7 +41,7 @@ function totalCart() {
 	}
 
 	let showPrice = document.getElementById("total");
-	showPrice.innerHTML = globalPrice;
+	showPrice.innerHTML = "Total: " + globalPrice + "€";
 
 	if (globalPrice === 0) {
 		alert("Je crois que ton panier est vide...");
@@ -91,11 +92,12 @@ document.getElementById("confirmCommand").addEventListener("click", function () 
 			body: sendCart
 		})
 			.then(res => res.json())
-			.then(command => localStorage.setItem("number", JSON.stringify(command)));
-		localStorage.removeItem("cartContent");
-		window.location.href = "/front_end/Pages HTML/confirm.html";
-
-		alert("tu as validé ton panier, cela nous rempli de joie!");
+			.then(function (command) {
+				localStorage.setItem("number", JSON.stringify(command));
+				localStorage.removeItem("cartContent");
+				window.location.href = "/front_end/Pages HTML/confirm.html";
+				alert("tu as validé ton panier, cela nous rempli de joie!");
+			});
 	} else {
 		alert("Il nous faudrait tes coordonnées sinon ca va être compliqué!");
 	}

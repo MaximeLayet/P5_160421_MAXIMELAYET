@@ -29,7 +29,7 @@ function showTeddy(teddy) {
 		<h2 class="card-text">${teddy.name}</h2>
 		<img class="only_bear card-img-top" src="${teddy.imageUrl}" />
 		<h3 class="card-text">${teddy.description}</h3>
-		<p class="price_product text-center" id="price">${teddy.price / 100}€</p>
+		<p class="price_product text-center" id="price">${teddy.price / 100} €</p>
 	</div>
 	<div class="custom">
 		<label for=quantity>Quantité :</label>
@@ -67,9 +67,11 @@ function showTeddy(teddy) {
 		//Message d'ajout dans le panier d'un ou plusieurs Teddy
 
 		if (quantities > 1) {
-			alert(`Plusieurs ${teddy.name} ont couru vers le panier`);
+			alert(`Plusieurs ${teddy.name} ont sauté le panier`);
+		} else if (teddy.name === "Lenny and Carl") {
+			alert(`${teddy.name} ont sauté dans le panier`);
 		} else {
-			alert(`${teddy.name} a couru vers le panier`);
+			alert(`${teddy.name} a sauté dans le panier`);
 		}
 
 		//Définir les données à envoyer dans le localStorage
@@ -77,54 +79,31 @@ function showTeddy(teddy) {
 		let sheet = {
 			id: teddy._id,
 			name: teddy.name,
-			price: (teddy.price / 100) * quantities,
+			price: teddy.price / 100,
 			picture: teddy.imageUrl,
 			quantity: parseFloat(quantities)
 		};
 
 		//Evoie dans le local storage en ajoutant une ligne au tableau
-		const cartContent = JSON.parse(localStorage.getItem("cartContent")) || [];
-		cartContent.push(sheet);
-		localStorage.setItem("cartContent", JSON.stringify(cartContent));
 
-		// cartContent.forEach(newQuantity => {
-		// 	if (cartContent.id === teddy.id) {
-		// 		cartContent.quantity = false;
-		// 		newQuantity.quantity += quantity;
-		// 		localStorage.setItem("cartContent", JSON.stringify(cartContent));
-		// 	} else {
-		// 		cartContent.push(sheet);
-		// 		localStorage.setItem("cartContent", JSON.stringify(cartContent));
-		// 	}
-		// });
-		// console.log(cartContent);
-		// console.log(sheet.quantity);
+		function addBears() {
+			const cartContent = JSON.parse(localStorage.getItem("cartContent")) || [];
+			let bearsInCart = false;
+			for (let i = 0; i < cartContent.length; i++) {
+				if (cartContent[i].id === sheet.id) {
+					bearsInCart = true;
+					cartContent[i].quantity += sheet.quantity;
+					cartContent[i].price = cartContent[i].quantity * sheet.price;
+				}
+				console.log(cartContent[i].price);
+			}
+			if (!bearsInCart) {
+				cartContent.push(sheet);
+			}
 
-		// if (cartContent[i].id === sheet.id) {
-		// 	cartContent.shift(sheet.quantity);
-		// 	cartContent.push(sheet.quantity);
-		// 	localStorage.removeItem("cartContent", JSON.stringify(cartContent));
-		// 	localStorage.setItem("cartContent", JSON.stringify(cartContent));
-		// } else {
-		// 	cartContent.push(sheet);
-		// 	localStorage.setItem("cartContent", JSON.stringify(cartContent));
-		// }
+			localStorage.setItem("cartContent", JSON.stringify(cartContent));
+		}
 
-		// function addQuantity(cartContent) {
-		// 	for (let i = 0; i < cartContent.length; i++) {
-		// 		if (cartContent[i].id === sheet.id) {
-		// 			return i;
-		// 		}
-		// 	}
-		// 	return false;
-		// }
-
-		// addQuantity(cartContent);
-
-		// for (let i = 0; i < cartContent.length; i++) {
-		// 	let sheetToUpdate = cartContent.indexOf(cartContent[i]);
-		// 	cartContent[sheetToUpdate][sheet.quantity] += sheet.quantity;
-		// 	localStorage.setItem("cartContent", JSON.stringify(cartContent));
-		// }
+		addBears();
 	});
 }
