@@ -95,7 +95,7 @@ document.getElementById("confirmCommand").addEventListener("click", function () 
 			.then(function (command) {
 				localStorage.setItem("number", JSON.stringify(command));
 				localStorage.removeItem("cartContent");
-				window.location.href = "/front_end/Pages HTML/confirm.html";
+				window.location.href = "/front_end/Pages_HTML/confirm.html";
 				alert("tu as validé ton panier, cela nous rempli de joie!");
 			});
 	} else {

@@ -41,11 +41,11 @@ function showTeddy(teddy) {
 			</select>
 	</div>
 	<div class="three_buttons">
-	<a href="/front_end/Pages HTML/index.html">
+	<a href="/front_end/Pages_HTML/index.html">
 	<button>Choisis un autre Orinours</button>
 	</a>	
 	<button id="sendToCart" >Ajouter au panier</button>
-	<a href="/front_end/Pages HTML/cart.html">
+	<a href="/front_end/Pages_HTML/cart.html">
 	<button class="see_my_cart">Voir mon panier</button>
 	</a>	
 	</div>
