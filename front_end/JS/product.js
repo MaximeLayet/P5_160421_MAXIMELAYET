@@ -14,7 +14,7 @@ const personalisation = document.getElementById("personalisation");
 let product = new URL(window.location.href);
 let id = product.searchParams.get("id");
 
-// //appel de l'API
+//appel de l'API
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
 	.then(res => res.json())
@@ -51,8 +51,6 @@ function showTeddy(teddy) {
 	</div>
 	`;
 
-	//Créer un objet pour l'envoyer dans le local storage
-
 	//Envoyer dans le localStorage
 
 	sendToCart.addEventListener("click", function (e) {
@@ -84,7 +82,7 @@ function showTeddy(teddy) {
 			quantity: parseFloat(quantities)
 		};
 
-		//Evoie dans le local storage en ajoutant une ligne au tableau
+		//Evoie dans le local storage en ajoutant une ligne au tableau et en additionnant les quantités quand l'id est identique(fonction)
 
 		function addBears() {
 			const cartContent = JSON.parse(localStorage.getItem("cartContent")) || [];

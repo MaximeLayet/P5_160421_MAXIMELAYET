@@ -1,4 +1,4 @@
-//Le panier doit résumer les produits selectionnés, le prix total et un formulaire de renseignement pour pouvoir valider la commande////
+////Le panier doit résumer les produits selectionnés, le prix total et un formulaire de renseignement pour pouvoir valider la commande////
 
 //Appeler les produits du localStorage
 let cartContent = JSON.parse(localStorage.getItem("cartContent"));
@@ -14,6 +14,7 @@ function myCart() {
 		<td>${cartContent[i].price}€<td>
 		<td><btn class="btn btn-danger btn-sm delete">X</btn></td></tr>`;
 		console.log(cart);
+
 		//Supprimer une ligne
 
 		let deleteLine = document.querySelectorAll(".delete");
@@ -33,6 +34,7 @@ function myCart() {
 myCart();
 
 //Creer une fonction pour calculer et afficher le total du panier
+
 function totalCart() {
 	let globalPrice = 0;
 	for (let i = 0; i < cartContent.length; i++) {
@@ -46,9 +48,12 @@ function totalCart() {
 	if (globalPrice === 0) {
 		alert("Je crois que ton panier est vide...");
 	}
+	console.log(globalPrice);
 }
 
 totalCart();
+
+//mise en place d'un regex pour la fiche de renseignement//
 
 document.getElementById("confirmCommand").addEventListener("click", function () {
 	let products = [];
@@ -66,6 +71,8 @@ document.getElementById("confirmCommand").addEventListener("click", function () 
 			console.log(cartContent[i].id);
 			products.push(total);
 		}
+
+		//création du let contact qui sera envoyé avec products//
 
 		let firstName = document.getElementById("firstName").value;
 		console.log(firstName);

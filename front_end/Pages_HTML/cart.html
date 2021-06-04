@@ -17,6 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="/front_end/CSS/styles.css" />
 	</head>
 	<body>
+		<!-- header avec logo et lien vers index.html -->
 		<header>
 			<img
 				class="orinoco col-12"
@@ -26,10 +27,10 @@
 			<a
 				class="retour_accueil d-flex justify-content-center"
 				href="/front_end/Pages_HTML/index.html"
-				>Accueil</a
+				>Je vais encore en prendre un ou deux je crois</a
 			>
 		</header>
-
+		<!-- main avec h1 et mise en place du squelette du panier en lien avec le JS -->
 		<main>
 			<h1 class="text-center mt-4">Et voilà ton panier!!</h1>
 			<!--Ci dessous le panier avec le résumé de la commande, le total et un formulaire pour passer la commande(nom, etc)-->
@@ -40,6 +41,7 @@
 			<h2 class="text-center pt-4">Dernière étape pour confirmer ton panier!</h2>
 			<div class="kart"></div>
 			<div class="form_command ml-2">
+				<!-- mise en place du formulaire  -->
 				<form method="GET">
 					<label for="first_name">Prénom:</label>
 					<input
@@ -68,12 +70,13 @@
 						required
 					/>
 				</form>
+				<!-- bouton pour valider le panier -->
 				<div class="col-12 text-center">
 					<button class="validate mb-0" id="confirmCommand">Valider mon panier</button>
 				</div>
 			</div>
 		</main>
-
+		<!-- footer avec le mail et lien et le copyright -->
 		<footer class="pt-3 mt-4">
 			<a class="mail col-3 pt-4" href="mailto:oronico@contact.com">Nous contacter</a>
 			<p class="ml-3 pb-4 pt-2">&copy Orinoco 2021</p>
