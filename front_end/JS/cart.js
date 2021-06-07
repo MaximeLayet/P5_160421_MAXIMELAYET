@@ -49,6 +49,7 @@ function totalCart() {
 		alert("Je crois que ton panier est vide...");
 	}
 	console.log(globalPrice);
+	localStorage.setItem("total", JSON.stringify(globalPrice));
 }
 
 totalCart();

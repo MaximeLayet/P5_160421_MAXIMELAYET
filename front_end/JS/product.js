@@ -96,6 +96,7 @@ function showTeddy(teddy) {
 				console.log(cartContent[i].price);
 			}
 			if (!bearsInCart) {
+				sheet.price = (teddy.price / 100) * sheet.quantity;
 				cartContent.push(sheet);
 			}
 
