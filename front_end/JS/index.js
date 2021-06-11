@@ -33,4 +33,7 @@ fetch(url)
 			output.appendChild(p);
 			img.classList.add("only_bear");
 		});
+	})
+	.catch(err => {
+		console.log(err);
 	});
